@@ -2,3 +2,7 @@
 # Pokemon
 
 ![alt text](https://github.com/jaapbrasser/Pokemon/blob/master/Pictures/Pikachu.png "Pikachu in PowerShell console")
+
+## Run it now
+
+iex((iwr http://bit.ly/2alWmif) -replace '^[^#]*#','#')
