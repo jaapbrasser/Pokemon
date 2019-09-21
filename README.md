@@ -9,4 +9,4 @@ iex((iwr http://bit.ly/2alWmif) -replace '^[^#]*#','#')
 
 ## Goal of the project
 
-Provide Pokemon in any console
+Provide Pokemon in any console, at least provide the original 150 Pokemon
