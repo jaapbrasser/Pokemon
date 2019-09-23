@@ -23,3 +23,6 @@ jobs:
       shell: pwsh
       run: Invoke-Pester
     - uses: actions/upload-artifact@master
+      with:
+        name: Pokemon
+        path: .
