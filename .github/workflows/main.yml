@@ -15,3 +15,11 @@ jobs:
       run: |
         echo Add other actions to build,
         echo test, and deploy your project.
+    - uses: actions/checkout@v1
+    - name: Install Pester
+      shell: pwsh
+      run: Install-Module Pester -Force
+    - name: Install Pester
+      shell: pwsh
+      run: Invoke-Pester
+    - uses: actions/upload-artifact@master
