@@ -19,7 +19,7 @@ jobs:
     - name: Install Pester
       shell: pwsh
       run: Install-Module Pester -Force
-    - name: Install Pester
+    - name: Run Pester Tests
       shell: pwsh
       run: Invoke-Pester
     - uses: actions/upload-artifact@master
