@@ -9,4 +9,4 @@
 
 ## Goal of the project
 
-Provide Pokemon in any console, at leaast provide the original 150 Pokemon
+Provide Pokemon in any console, at least provide the original 150 Pokemon
