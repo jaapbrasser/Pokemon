@@ -21,7 +21,13 @@ jobs:
       run: Install-Module Pester -Force
     - name: Run Pester Tests
       shell: pwsh
-      run: Invoke-Pester -OutputFile TestResults.xml -OutputFormat NUnitXml; exit 1
+      run: |
+        $TestResults = Invoke-Pester -OutputFile TestResults.xml -OutputFormat NUnitXml -Passthrough
+        if ($TestResults.FailedCount -gt 0) {
+          exit 1
+        } else {
+          'We're happy little campers'
+        }
     - uses: actions/upload-artifact@master
       with:
         name: Pokemon
