@@ -21,7 +21,7 @@ jobs:
       run: Install-Module Pester -Force
     - name: Run Pester Tests
       shell: pwsh
-      run: Invoke-Pester -OutputFile TestResults.xml -OutputFormat NUnitXml
+      run: Invoke-Pester -OutputFile TestResults.xml -OutputFormat NUnitXml; exit 1
     - uses: actions/upload-artifact@master
       with:
         name: Pokemon
