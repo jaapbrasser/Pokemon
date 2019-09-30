@@ -3,14 +3,74 @@ name: CI
 on: [push]
 
 jobs:
-  build:
+  UbuntuUnitTest:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v1
-    - name: Install Pester
+    - name: Install Pester - Ubuntu
       shell: pwsh
       run: Install-Module Pester -Force
-    - name: Run Pester Tests
+    - name: Run Pester Tests - Ubuntu
+      shell: pwsh
+      run: |
+        $TestResults = Invoke-Pester -OutputFile TestResults.xml -OutputFormat NUnitXml -PassThru
+        if ($TestResults.FailedCount -gt 0) {
+          exit 1
+        } else {
+          "We're happy little campers"
+        }
+    - uses: actions/upload-artifact@master
+      with:
+        name: Pokemon
+        path: .
+  MacOsUnitTests:
+    runs-on: macOS-latest
+    steps:
+    - uses: actions/checkout@v1
+    - name: Install Pester - macOS
+      shell: pwsh
+      run: Install-Module Pester -Force
+    - name: Run Pester Tests - macOS
+      shell: pwsh
+      run: |
+        $TestResults = Invoke-Pester -OutputFile TestResults.xml -OutputFormat NUnitXml -PassThru
+        if ($TestResults.FailedCount -gt 0) {
+          exit 1
+        } else {
+          "We're happy little campers"
+        }
+    - uses: actions/upload-artifact@master
+      with:
+        name: Pokemon
+        path: .
+  WindowsUnitTest_pwsh:
+    runs-on: windows-latest
+    steps:
+    - uses: actions/checkout@v1
+    - name: Install Pester - Windows_pwsh
+      shell: pwsh
+      run: Install-Module Pester -Force
+    - name: Run Pester Tests - Windows_pwsh
+      shell: pwsh
+      run: |
+        $TestResults = Invoke-Pester -OutputFile TestResults.xml -OutputFormat NUnitXml -PassThru
+        if ($TestResults.FailedCount -gt 0) {
+          exit 1
+        } else {
+          "We're happy little campers"
+        }
+    - uses: actions/upload-artifact@master
+      with:
+        name: Pokemon
+        path: .
+  WindowsUnitTest_powershell:
+    runs-on: windows-latest
+    steps:
+    - uses: actions/checkout@v1
+    - name: Install Pester - Windows_powershell
+      shell: pwsh
+      run: Install-Module Pester -Force
+    - name: Run Pester Tests - Windows_powershell
       shell: pwsh
       run: |
         $TestResults = Invoke-Pester -OutputFile TestResults.xml -OutputFormat NUnitXml -PassThru
