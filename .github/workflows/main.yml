@@ -4,17 +4,8 @@ on: [push]
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
-    
     steps:
-    - uses: actions/checkout@v1
-    - name: Run a one-line script
-      run: echo Hello, world!
-    - name: Run a multi-line script
-      run: |
-        echo Add other actions to build,
-        echo test, and deploy your project.
     - uses: actions/checkout@v1
     - name: Install Pester
       shell: pwsh
@@ -22,7 +13,7 @@ jobs:
     - name: Run Pester Tests
       shell: pwsh
       run: |
-        $TestResults = Invoke-Pester -OutputFile TestResults.xml -OutputFormat NUnitXml -Passthrough
+        $TestResults = Invoke-Pester -OutputFile TestResults.xml -OutputFormat NUnitXml -PassThru
         if ($TestResults.FailedCount -gt 0) {
           exit 1
         } else {
