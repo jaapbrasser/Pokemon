@@ -26,7 +26,7 @@ jobs:
         if ($TestResults.FailedCount -gt 0) {
           exit 1
         } else {
-          'We're happy little campers'
+          "We're happy little campers"
         }
     - uses: actions/upload-artifact@master
       with:
