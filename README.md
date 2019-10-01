@@ -1,8 +1,4 @@
-[![Build status]()
-
-<p align="left">
-  <a href="https://github.com/jaapbrasser/pokemon"><img alt="GitHub Actions status" src="https://github.com/jaapbrasser/pokemon/workflows/Main%20workflow/badge.svg"></a>
-</p>
+[![Build Status](https://img.shields.io/endpoint.svg?url=https%3A%2F%2Factions-badge.atrox.dev%2Fjaapbrasser%2Fpokemon%2Fbadge%3Fref%3Dmaster&style=flat)](https://actions-badge.atrox.dev/jaapbrasser/pokemon/goto?ref=master)
 
 # Pokemon
 
